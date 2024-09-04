@@ -4,11 +4,7 @@ class Solution {
         HashMap<Integer, Integer> map = new HashMap<>();
         int n = arr.length;
         for(int ele: arr){
-            if(map.containsKey(ele)) {
-                int freq = map.get(ele);
-                map.put(ele, freq +1);
-            }
-            else map.put(ele,1);
+            map.put(ele, map.getOrDefault(ele, 0) + 1);
             
         }
         for(int key:map.keySet()){
